@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            transition: background-color 2s ease-in-out;
+        }
+        /* Initial white background */
+        .fade {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            transition: background-color 3s ease-out;
+        }
+        /* After fading, change to blue */
+        .fade.complete {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fade"></div>
+
+    <script>
+        // Wait for the page to load and apply the fade effect
+        window.onload = function() {
+            const fadeElement = document.querySelector('.fade');
+
+            // Trigger the fade to blue
+            setTimeout(() => {
+                fadeElement.classList.add('complete');
+            }, 100); // slight delay before starting fade
+
+            // Redirect after fade completes
+            setTimeout(() => {
+                window.location.href = "https://joshy.lol/?r";
+            }, 3500); // Ensure this matches the fade duration
+        };
+    </script>
+
+</body>
+</html>
